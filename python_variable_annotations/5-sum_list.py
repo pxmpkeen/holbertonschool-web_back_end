@@ -2,10 +2,11 @@
 """
 Annotating variables and function with float and str
 """
+from typing import List
 
 
 def sum_list(input_list: List[float]) -> float:
     """
-    Function that str's num
+    Function sum of list
     """
     return sum(input_list)
