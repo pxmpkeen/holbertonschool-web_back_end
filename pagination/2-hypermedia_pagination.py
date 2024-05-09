@@ -42,7 +42,7 @@ class Server:
         except IndexError:
             return []
 
-    def get_hyper(self, page: int = 1, page_size: int = 10):
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
         """Returning dictionary with info about page
         """
         total_len = len(self.dataset())
