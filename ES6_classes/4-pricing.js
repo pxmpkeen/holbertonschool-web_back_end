@@ -5,6 +5,14 @@ export default class Pricing {
   constructor(price, currency) {
     this._price = price;
     this._currency = currency;
+
+    if (typeof this._price !== 'number') {
+      throw new TypeError('price must be a number');
+    }
+
+    if (!(this._currency instanceof Currency)) {
+      throw new TypeError('currency must be an instance of Currency');
+    }
   }
 
   get price() {
