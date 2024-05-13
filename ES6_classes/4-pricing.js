@@ -2,12 +2,12 @@
 import Currency from './3-currency.js';
 
 export default class Pricing {
-  constructor(price, currency) {
-    this._price = price;
+  constructor(amount, currency) {
+    this._amount = amount;
     this._currency = currency;
 
-    if (typeof this._price !== 'number') {
-      throw new TypeError('price must be a number');
+    if (typeof this._amount !== 'number') {
+      throw new TypeError('amount must be a number');
     }
 
     if (!(this._currency instanceof Currency)) {
@@ -15,12 +15,12 @@ export default class Pricing {
     }
   }
 
-  get price() {
-    return this._price;
+  get amount() {
+    return this._amount;
   }
 
-  set price(value) {
-    this._price = value;
+  set amount(value) {
+    this._amount = value;
   }
 
   get currency() {
@@ -32,7 +32,7 @@ export default class Pricing {
   }
 
   displayFullPrice() {
-    return `${this._price} ${this._currency.displayFullCurrency()}`;
+    return `${this._amount} ${this._currency.displayFullCurrency()}`;
   }
 
   static convertPrice(amount, conversionRate) {
